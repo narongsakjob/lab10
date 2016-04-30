@@ -58,12 +58,18 @@ public class Coin /*TODO implements Comparable<Coin> */ {
 	 * Two coins are equal if they have the same currency and value.
 	 * @param obj an Object to compare to this coin.
 	 * @see java.lang.Object#equals(java.lang.Object)
+	 * @param c catch obj to Coin
 	 */
 	@Override
 	public boolean equals(Object obj) {
-//TODO Write a correct equals method for Coin.
-//     You can assume that the currency is never null.
-		return this == obj;
+		if(!(obj instanceof Coin)){
+			return false;
+		}else{
+			Coin c = (Coin)obj;
+			if(this.getCurrency().equals(c.getCurrency()))return true;
+			else return false;	
+					
+		}
 	}
 
 	/**

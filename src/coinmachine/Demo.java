@@ -55,13 +55,18 @@ public class Demo {
 	/**
 	 * Run a console demo.
 	 * @param args not used
+	 * @param test1 create your CoinGUI for use CoinGUI that capacity
+	 * @param test2 create your MyObserverGUI for use MyObseverGUI that capacity
 	 */
 	public static void main(String[] args) {
 		final int capacity = 10;  // how many coins the machine can hold
 		
 		CoinMachine machine = new CoinMachine( capacity );
+		CoinGUI test1 = new CoinGUI(machine);
+		MyObserverGUI test2 = new MyObserverGUI(machine);
+		machine.addObserver(test1);
+		machine.addObserver(test2);
 		Demo demo = new Demo();
-		//TODO add observers
 		demo.insertDialog(machine);
 	}
 }
